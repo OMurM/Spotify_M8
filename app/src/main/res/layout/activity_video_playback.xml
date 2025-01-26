@@ -17,9 +17,9 @@
         android:id="@+id/song_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/song_album"
@@ -34,4 +34,13 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/play_pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:layout_below="@id/song_artist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -56,11 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
         videoListView.setOnItemClickListener((parent, view, position, id) -> {
             HashMap<String, String> selectedMedia = videoList.get(position);
+            Log.d("MainActivity", "Selected Media: " + selectedMedia.toString());
+            Log.d("MainActivity", "Image URL: " + selectedMedia.get("image_url"));
             Intent intent = new Intent(this, VideoPlaybackActivity.class);
             intent.putExtra("title", selectedMedia.get("name"));
             intent.putExtra("album", selectedMedia.get("album"));
             intent.putExtra("artist", selectedMedia.get("artist"));
             intent.putExtra("image_url", selectedMedia.get("image_url"));
+            intent.putExtra("uri", selectedMedia.get("uri"));
             startActivity(intent);
         });
     }
@@ -173,6 +176,10 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             Log.d("MainActivity", "Download directory does not exist");
+        }
+
+        if (videoList.isEmpty()) {
+            Toast.makeText(this, "No songs found", Toast.LENGTH_SHORT).show();
         }
     }
 
